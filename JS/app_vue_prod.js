@@ -220,14 +220,6 @@ var vue1 = new Vue({
         price: 450
       },
 
-      {
-        sku: 4,
-        product: "Felicidad Market",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/winter-flowers-021-1a1c9a44aa47a52c5b16820019280487-640-0.jpg",
-        description: "Winter Blossom - 15x15",
-        price: 5
-      },
-
     ],
 
   },
@@ -267,14 +259,6 @@ var vue2 = new Vue({
         image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/tijera-grulla-oro1-271c4783a92c9a89d915228648237803-640-0.webp",
         description: "Original",
         price: 4560
-      },
-
-      {
-        sku: 8,
-        product: "Cutter Deli - Inspire",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/deli-grande-02-effcc37f6c648b508216652615900394-640-0.webp",
-        description: "18 Mm - Grande - Azul",
-        price: 2680
       },
 
     ],
@@ -317,14 +301,6 @@ var vue3 = new Vue({
         price: 23790
       },
 
-      {
-        sku: 12,
-        product: "Giro Sobre Giro",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/giro-sobre-giro-021-8af21d9b7cb4a7168b16639625823475-640-0.webp",
-        description: "Miguel Gañán",
-        price: 9420
-      },
-
     ],
   },
 
@@ -365,22 +341,6 @@ var vue4 = new Vue({
         price: 11460
       },
 
-      {
-        sku: 16,
-        product: "Furoshiki",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/furoshiki-hexagonal-031-8b73e77ee04541837516591356045790-640-0.webp",
-        description: "Hexágonos De Colores",
-        price: 4140
-      },
-
-      {
-        sku: 17,
-        product: "producto de prueba",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/furoshiki-hexagonal-031-8b73e77ee04541837516591356045790-640-0.webp",
-        description: "descripcion",
-        price: 1234
-      },
-
     ],
   },
 
@@ -419,22 +379,6 @@ var vue5 = new Vue({
         price: 11460
       },
 
-      {
-        sku: 21,
-        product: "Furoshiki",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/furoshiki-hexagonal-031-8b73e77ee04541837516591356045790-640-0.webp",
-        description: "Hexágonos De Colores",
-        price: 4140
-      },
-
-      {
-        sku: 22,
-        product: "producto de prueba",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/furoshiki-hexagonal-031-8b73e77ee04541837516591356045790-640-0.webp",
-        description: "descripcion",
-        price: 1234
-      },
-
     ],
   },
 
@@ -471,22 +415,6 @@ var vue6 = new Vue({
         image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/origami-box-kit011-5aa4731702fdfb120f16315624394791-640-0.webp",
         description: "Kit",
         price: 11460
-      },
-
-      {
-        sku: 26,
-        product: "Furoshiki",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/furoshiki-hexagonal-031-8b73e77ee04541837516591356045790-640-0.webp",
-        description: "Hexágonos De Colores",
-        price: 4140
-      },
-
-      {
-        sku: 27,
-        product: "producto de prueba",
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/612/products/furoshiki-hexagonal-031-8b73e77ee04541837516591356045790-640-0.webp",
-        description: "descripcion",
-        price: 1234
       },
 
     ],
