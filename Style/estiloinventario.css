@@ -1,0 +1,200 @@
+header nav {
+    display: none;
+}
+
+main button {
+    background-color: #cf7520;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+main button:hover {
+    background-color: #e7c818;
+}
+
+.fondo_inventario {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* random user estilos */
+
+/* .random_user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+} */
+
+#cerrar-sesion {
+    background-color: #cf7520;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 85%;
+    border: none;
+    cursor: pointer;
+}
+
+#cerrar-sesion:hover {
+    background-color: #e7c818;
+}
+
+#user-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* main */
+
+.inventario {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+nav {
+    grid-area: 1 / 1 / 6 / 2;
+}
+
+main {
+    grid-area: 1 / 2 / 6 / 5;
+}
+
+.random_user {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* navbar */
+
+.nav_inventario {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lista_nav_inv {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_inventario {
+    width: 100%;
+    font-size: 1.05em;
+    background-color: #cf7520da;
+    padding: 4em;
+}
+
+/* secciones */
+/* listado */
+/* bajas */
+
+.container_main_invententario {
+    margin-top: 10em;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_main_invententario2 {
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.container_main_invententario span {
+    padding: 10px;
+}
+.container_main_invententario2 span {
+    padding: 10px;
+}
+
+.bajas table,
+.listado table {
+    width: 100%;
+    color: #fff;
+    font-size: 1.5em;
+    min-height: 500px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.bajas th,
+.listado th {
+    padding: 5px;
+    background-color: #cf7520;
+}
+.bajas tbody td,
+.listado tbody td {
+    /* border-top: 1px solid #cf7520 */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* cambios */
+/* altas */
+
+.altas,
+.cambios {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.altas button,
+.cambios button {
+    width: 30%;
+}
+
+.altas form,
+.datos_producto form,
+.cambios form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.5em;
+    min-height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.altas label,
+.cambios label {
+    padding: 15px;
+    background-color: #cf7520;
+}
+
+.altas input,
+.cambios input {
+    padding: 15px;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid white;
+}
+
+.datos_producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.datos_producto h2 {
+    color: #fff;
+}
+
+.altas h1 {
+    margin-bottom: 20px;
+}

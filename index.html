@@ -1,0 +1,292 @@
+<!-- Codo a Codo - FullStack Python
+1er cuatrimestre 2023 - Comision #23016
+Prof Juan Pablo Nardone
+TP Final
+Grupo 11 - Integrantes
+Nicolas Olguin			
+Kevin Puentes	
+Martin Gelman		
+Fernando Gomez Rojas	
+Fecha de entrega 11/07/2023 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/estilos_productos.css">
+    <link rel="stylesheet" href="style/alertify.min.css">
+    <link rel="stylesheet" href="style/themes/default.css">
+    <link rel="stylesheet" href="style/animate.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a668f227d.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Tienda</title>
+    <title>Tienda</title>
+</head>
+<body>
+    <header id="inicio_pag">
+    </header>
+    <main class="main" id="irArriba">
+        <section class="wrapper">
+            <div class="welcome">
+                <h1>Pasión por el papel</h1>
+                <p class="leyenda">
+                    ¡Bienvenido a nuestra tienda de origami! Aquí encontrarás una gran variedad de materiales e
+                    insumos atractivos para dar forma a todas tus ideas.
+                    <br>
+                    Somos un equipo apasionado que comparte la fascinación por el origami. Sumérgete en la emoción
+                    de crear con tus propias manos y descubre la belleza entre los pliegues.
+                    <br><br>
+                    Te invitamos a explorar las secciones de nuestra tienda, donde podrás encontrar materiales,
+                    insumos, ideas e inspiración para tus propias creaciones.
+                    <br><br>
+                    ¡Dejá fluir tu imaginación y descubrí el gran poder creativo del origami!
+                </p>
+                <h5>By origameca</h5>
+            </div>
+            <div class="fluid fluid1">
+                <img
+                    src="img/Main/chiyogamipaper1.jpg">
+            </div>
+            <div class="fluid fluid2">
+                <img
+                    src="img/Main/chiyogamipaper2.jpg">
+            </div>
+            <div class="fluid fluid3">
+                <img
+                    src="img/Main/chiyogamipaper3.jpg">
+            </div>
+            <div class="fluid fluid4">
+                <img
+                    src="img/Main/chiyogamipaper4.jpg">
+            </div>
+        </section>
+    </main>
+    <section class="products" id="catalog">
+        <div class="cabecera-prod"><h2>Productos</h2></div>
+        <div class="divider"></div>
+        <div class="cart_wrapper" id="cart_wrapper"></div>
+        <div class="productos">
+            <div class="wrapper_main">
+                <div class="cards">
+                  <div class=" card [ is-collapsed ] ">
+                    <div class="card__inner [ js-expander ]">
+                      <div class="img_inner" style="background-image: url(img/Novedades.webp)"></div>
+                      <div class="inner_text">
+                        <h2>Novedades</h2>
+                      </div>
+                    </div>
+                    <div class="card__expander">
+                      <div class="container_expander_main" id="container_expander_main_1">
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" card [ is-collapsed ] ">
+                    <div class="card__inner [ js-expander ]">
+                      <div class="img_inner" style="background-image: url(img/Accesorios.jpg)"></div>
+                      <div class="inner_text">
+                        <h2>Accesorios</h2>
+                      </div>
+                    </div>
+                    <div class="card__expander">
+                      <div class="container_expander_main" id="container_expander_main_2"></div>
+                    </div>
+                  </div>
+                  <div class=" card [ is-collapsed ] ">
+                    <div class="card__inner [ js-expander ]">
+                      <div class="img_inner" style="background-image: url(img/Regalos.png);"></div>
+                      <div class="inner_text">
+                        <h2>Regaleria</h2>
+                      </div>
+                    </div>
+                    <div class="card__expander">
+                      <div class="container_expander_main" id="container_expander_main_3"></div>
+                    </div>
+                  </div>
+                  <div class=" card [ is-collapsed ] ">
+                    <div class="card__inner [ js-expander ]">
+                      <div class="img_inner" style="background-image: url(img/Libros-v1.jpg)"></div>
+                      <div class="inner_text">
+                        <h2>Libros</h2>
+                      </div>
+                    </div>
+                    <div class="card__expander">
+                      <div class="container_expander_main" id="container_expander_main_4"></div>
+                    </div>
+                  </div>
+                  <div class=" card [ is-collapsed ] ">
+                    <div class="card__inner [ js-expander ]">
+                      <div class="img_inner" style="background-image: url(img/Cursos.jpg)"></div>
+                      <div class="inner_text">
+                        <h2>Cursos</h2>
+                      </div>
+                    </div>
+                    <div class="card__expander">
+                      <div class="container_expander_main" id="container_expander_main_5"></div>
+                    </div>
+                  </div>
+                  <div class=" card [ is-collapsed ] ">
+                    <div class="card__inner [ js-expander ]">
+                      <div class="img_inner" style="background-image: url(img/DivulgacionAchicar.jpg)"></div>
+                      <div class="inner_text">
+                        <h2>Divulgacion</h2>
+                      </div>
+                    </div>
+                    <div class="card__expander">
+                      <div class="container_expander_main" id="container_expander_main_6"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="banner-container">
+                <div class="banner" style="background-image: url(img/Banner1.jpg);">
+                    <div class="content-banner">
+                        <h3>PAPELES :</h3>
+                        <ul>
+                            <li>POR COLOR</li>
+                            <li>POR TAMAÑO</li>
+                            <li>POR GRAMAJE</li>
+                            <li>POR FAZ</li>
+                            <li>POR TIPO</li>
+                            <li>POR MARCA</li>
+                        </ul>
+                        <div class="boton">
+                            <a>Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <div id="Botón"><a href="#irArriba"><i><img src="icon/up24.png" alt=""></i></a></div>
+    <section class="about-us" id="nosotros">
+        <h2>Nosotros</h2>
+        <div class="divider"></div>
+        <div class="text-container1">
+            <h4>Somos un emprendimiento que surge de la necesidad artística y la vocación divulgativa de los miembros de
+                este equipo de trabajo. Creemos ser una solución sostenible frente al desconocimiento, la curiosidad,
+                la
+                creatividad y la poca oferta de contenido hispano sobre el arte de plegado en papel.
+                <br><br>
+                Nos mueve el espíritu de aproximar, de acercar a occidente este arte oriental, respetando y aprendiendo
+                sobre la cultura,
+                el arte, y toda la ceremonia que rodea a la papiroflexia.
+                <br><br>
+                Nuestro proyecto conlleva una fuerte inspiración en los modos y la forma de la cultura japonesa
+                relacionada a la papiroflexia. Estamos comprometidos en
+                resolver todas tus inquietudes y satisfacer tu deseo y pasión por aprender y descubrir.
+                <br><br>
+                Somos Luana,Irene y Marco. Somos entusiastas de la formación autodidacta y de la pasión por la
+                creatividad.
+            </h4>
+        </div>
+        <br><br>
+        <div class="our-team">
+            <div class="person">
+                <div class="container">
+                    <div class="container-inner">
+                        <img class="circle" src="img/About/fondo2.jpg" alt="fondo2"></img>
+                        <img class="img img2" src="img/About/1.png" alt="sujeto2"></img>
+                    </div>
+                </div>
+                <div class="divider-team"></div>
+                <div class="name">Pablo</div>
+                <div class="title">Marketing</div>
+            </div>
+            <div class="person">
+                <div class="container">
+                    <div class="container-inner">
+                        <img class="circle" src="img/About/fondo1.jpg" alt="fondo1"></img>
+                        <img class="img img1" src="img/About/2.png" alt="sujeto1"></img>
+                    </div>
+                </div>
+                <div class="divider-team"></div>
+                <div class="name">Luana</div>
+                <div class="title">Directora</div>
+            </div>
+            <div class="person">
+                <div class="container">
+                    <div class="container-inner">
+                        <img class="circle" src="img/About/fondo3.jpg" alt="fondo3"></img>
+                        <img class="img img3" src="img/About/3.png" alt="sujeto3"></img>
+                    </div>
+                </div>
+                <div class="divider-team"></div>
+                <div class="name">Marco</div>
+                <div class="title">Programador</div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <section class="contact" id="contacto">
+        <h2>Contáctanos</h2>
+        <div class="divider"></div>
+        <div class="text-container2">
+            <h4>¿Te quedó alguna duda, querés realizar alguna consulta, tenés una sugerencia?
+                <br><br>
+                Completá el formulario y nos estaremos contactando.
+            </h4>
+        </div>
+        <br><br>
+        <div class="grid_container">
+            <form id="form" name="form" action="https://formspree.io/f/mlekknyj" method="post">
+                <div class="cont_1 txt_input">
+                    <input type="text" id="nom" name="nombre" placeholder="nombre">
+                </div>
+                <div class="cont_2 txt_input">
+                    <input type="text" id="ape" name="apellido" placeholder="apellido">
+                </div>
+                <div class="cont_1 txt_input">
+                    <input type="text" id="email" name="email" placeholder="email">
+                </div>
+                <div class="cont_2 txt_input">
+                    <input type="text" id="tel" name="telefono" placeholder="teléfono">
+                </div>
+                <div class="cont_3 txt_area">
+                    <textarea rows="4" cols="50" id="mensaje" name="msg" placeholder="mensaje"></textarea>
+                </div>
+                <div class="cont_4 send_btn">
+                    <input type="submit" id="enviar" value="Enviar">
+                </div>
+                <div class="cont_5 reset_btn">
+                    <input type="reset" id="limpiar" value="Limpiar">
+                </div>
+                <div class="cont_6 alert_msg">
+                    <p id="mensajeError"></p>
+                </div>
+            </form>
+            <script src="js/form_validation.js"></script>
+            <script src="js/alertify.min.js"></script>
+        </div>
+    </section>
+    <section class="visit" id="visitanos">
+        <h2>Visitanos</h2>
+        <div class="divider"></div>
+        <div class="text-container3">
+            <h4>
+                ¡Podés encontrarnos y visitarnos en nuestra tienda y taller!
+            </h4>
+        </div>
+        <br><br>
+        <div class="iframe">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7753.3706931379875!2d139.0248178146124!3d35.20918863002121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019988bcd2ac2b5%3A0xaae4a36847c7e09a!2sSantuario%20Hakone!5e0!3m2!1ses!2sar!4v1682396597607!5m2!1ses!2sar"
+                width="400" height="300" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <footer class="footer" id="pie_pagina">
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js"></script>
+    <script src="JS/cards_prod.js"></script>
+    <script src="JS/app_vue_prod.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/header_footer.js"></script>
+</body>
+</html>

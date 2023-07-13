@@ -1,0 +1,633 @@
+/*--------------cards main-------- */
+
+.productos {
+    /* width: 90%; */
+    max-width: 1500px;
+    margin: auto;
+    padding: 40px 0;
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.wrapper_main { grid-area: 1 / 1 / 3 / 4; }
+.banner-container { grid-area: 1 / 4 / 3 / 5; }
+
+.wrapper_main {
+    max-width: 1200px;
+}
+
+.cards {
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card {
+    margin: 15px;
+    width: calc((100% / 3) - 30px);
+    transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        width: calc((100% / 2) - 30px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.card:hover .card__inner {
+    transform: scale(1.05);
+}
+
+.card__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    color: #eceef1;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.card__inner:after {
+    transition: all 0.3s ease-in-out;
+}
+
+.card__inner .fa {
+    width: 100%;
+    margin-top: .25em;
+}
+
+.card:hover .inner_text {
+    background: linear-gradient(to top, #232526, #414345);
+}
+
+.inner_text {
+    border-radius: 0 0 10px 10px;
+    font-size: 1em;
+    padding: 1em;
+    background: linear-gradient(to bottom, #232526, #414345);
+}
+
+.img_inner img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.img_inner {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.img_inner::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+@media(min-width: 40rem) {
+    .img_inner::before {
+        padding-top: 66.6%;
+    }
+}
+
+/* ----- Banner ----- */
+.banner-container {
+    display: grid;
+    max-height: 630px;
+    padding-top: 30px;
+}
+
+.banner {
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center center;
+    color: aliceblue;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+.banner:hover {
+    transform: scale(1.03);
+}
+
+.content-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content-banner ul {
+    list-style: none;
+}
+
+.content-banner ul li {
+    margin: 15px;
+    font-weight: bold;
+}
+
+.banner a {
+    background: #cf7520;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+.banner a:hover {
+    background: #e7c818;
+}
+
+/*-----------estilos para abrir y cerrar las cards------------ */
+
+.card.is-collapsed .card__inner:after {
+    content: "";
+    opacity: 0;
+}
+
+.card.is-collapsed .card__expander {
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    opacity: 0;
+}
+
+.card.is-expanded .card__inner {
+    background-color: #000000;
+}
+
+.card.is-expanded .card__inner:after {
+    content: "";
+    opacity: 1;
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 15px);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid rgba(255, 95, 0, 0.6);
+}
+
+.card.is-expanded .card__inner .fa:before {
+    content: "\f115";
+}
+
+.card.is-expanded .card__expander {
+    min-height: 200px;
+    overflow: visible;
+    margin-top: 30px;
+    opacity: 1;
+}
+
+.card.is-expanded:hover .card__inner {
+    transform: scale(1);
+}
+
+.card.is-inactive .card__inner {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.card.is-inactive:hover .card__inner {
+    background-color: #949fb0;
+    transform: scale(1);
+}
+
+@media screen and (min-width: 992px) {
+    .card:nth-of-type(3n+2) .card__expander {
+        margin-left: calc(-100% - 30px);
+    }
+
+    .card:nth-of-type(3n+3) .card__expander {
+        margin-left: calc(-200% - 60px);
+    }
+
+    .card:nth-of-type(3n+4) .card__expander {
+        clear: left;
+    }
+
+    .card__expander {
+        width: calc(300% + 60px);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .card:nth-of-type(2n+2) .card__expander {
+        margin-left: calc(-100% - 30px);
+    }
+
+    .card:nth-of-type(2n+3) {
+        clear: left;
+    }
+
+    .card__expander {
+        width: calc(200% + 30px);
+    }
+}
+
+/* -------estilos para la card extendida------------ */
+
+.card__expander {
+    transition: all 0.4s ease-in-out;
+    background-color: rgba(255, 95, 0, 0.6);
+    position: relative;
+    text-transform: uppercase;
+    color: #eceef1;
+    font-size: 1.5em;
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* --cajaPrincipal-- */
+
+.main-wrapper .header {
+    position: relative;
+    background: linear-gradient(to left, #16222A, #3A6073);
+    background-size: cover;
+    height: 25em;
+    width: 100vw;
+    box-shadow: inset -1px -3px 5px rgba(0, 0, 0, 0.5), inset 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.main-wrapper .header h1 {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5), -1px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*------------ apps de vue-------- */
+
+.main-wrapper #vue1,
+.main-wrapper #vue2,
+.main-wrapper #vue3,
+.main-wrapper #vue4 {
+    margin: 0 auto;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* --carrito-- */
+
+
+.main-cart #cart-vue .cart {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0em;
+    top: 0em;
+    max-height: 100vh;
+    overflow-y: auto;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    z-index: 100;
+}
+
+.main-cart #cart-vue .cart .icon_cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.main-cart #cart-vue .cart .icon_cart .fa-shopping-cart,
+.main-cart #cart-vue .cart .icon_cart .cart-size {
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 0 5px;
+}
+
+.main-cart #cart-vue .cart .cart-items {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em 2em 1em;
+    font-size: 1.5em;
+}
+
+.main-cart #cart-vue .cart .cart-items .cart_botton {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-cart #cart-vue .cart .cart-items .cart_botton button {
+    padding: 0.5em;
+    margin: 0.5em 0;
+    background: #fc801a;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all 0.1s;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.main-cart #cart-vue .cart .cart-items .cart_botton button:hover {
+    background: #f7b733;
+}
+
+.main-cart #cart-vue .cart .cart-items .cartTable tbody {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-cart #cart-vue .cart .cart-items .cartTable tbody tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-cart #cart-vue .cart .cart-items .cartTable tbody tr td {
+    font-size: 1em;
+    margin-right: 15px;
+}
+
+.main-cart #cart-vue .cart .cart-items .cartTable tbody tr td button {
+    font-size: 0.75em;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    background: #fc801a;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.main-cart #cart-vue .cart .cart-items .cartTable tbody tr td button:hover {
+    background: #f7b733;
+}
+
+.main-cart #cart-vue .cart .cart-items .cartImage {
+    width: 5.5em;
+    height: 5.5em;
+    margin: 0.5em auto;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .cartImage:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    transition: all 0.1s;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .cartImage i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    z-index: 1;
+    transition: all 0.25s;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .cartImage:hover i {
+    text-shadow: 1px 2px 5px black;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .cartImage:hover:after {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.main-cart #cart-vue .cart .cart-items .cartImage:active i {
+    text-shadow: 0px 0px 1px black;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .cartSubTotal {
+    border-top: 1px solid white;
+    font-size: 1.25em;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .clearCart {
+    float: left;
+    margin-top: 2em;
+    margin-bottom: 1.25em;
+}
+
+
+.main-cart #cart-vue .cart .cart-items .checkoutCart {
+    float: right;
+    margin-top: 2em;
+    margin-bottom: 1.25em;
+}
+
+/* ---productos--- */
+
+.main-wrapper #vue1 .products,
+.main-wrapper #vue2 .products,
+.main-wrapper #vue3 .products,
+.main-wrapper #vue4 .products,
+.main-wrapper #vue5 .products,
+.main-wrapper #vue6 .products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-wrapper #vue1 .products .product,
+.main-wrapper #vue2 .products .product,
+.main-wrapper #vue3 .products .product,
+.main-wrapper #vue4 .products .product,
+.main-wrapper #vue5 .products .product,
+.main-wrapper #vue6 .products .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 15px;
+    width: calc((100%)/3 - 30px);
+    transition: all 0.2s ease-in-out;
+}
+
+.main-wrapper #vue1 .products .product button,
+.main-wrapper #vue2 .products .product button,
+.main-wrapper #vue3 .products .product button,
+.main-wrapper #vue4 .products .product button,
+.main-wrapper #vue5 .products .product button,
+.main-wrapper #vue6 .products .product button {
+    padding: 0.5em;
+    margin: 1em 0;
+    background: #fc801a;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all 0.1s;
+    font-size: 0.70em;
+    cursor: pointer;
+}
+
+.main-wrapper #vue1 .products .product button:hover,
+.main-wrapper #vue2 .products .product button:hover,
+.main-wrapper #vue3 .products .product button:hover,
+.main-wrapper #vue4 .products .product button:hover,
+.main-wrapper #vue5 .products .product button:hover,
+.main-wrapper #vue6 .products .product button:hover {
+    background: #f7b733;
+}
+
+@media screen and (max-width: 991px) {
+
+    .main-wrapper #vue1 .products .product,
+    .main-wrapper #vue2 .products .product,
+    .main-wrapper #vue3 .products .product,
+    .main-wrapper #vue4 .products .product,
+    .main-wrapper #vue5 .products .product,
+    .main-wrapper #vue6 .products .product {
+        width: calc((100% / 2) - 30px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .main-wrapper #vue1 .products .product,
+    .main-wrapper #vue2 .products .product,
+    .main-wrapper #vue3 .products .product,
+    .main-wrapper #vue4 .products .product,
+    .main-wrapper #vue5 .products .product,
+    .main-wrapper #vue6 .products .product {
+        width: 100%;
+    }
+}
+
+.main-wrapper #vue1 .products .product .image,
+.main-wrapper #vue2 .products .product .image,
+.main-wrapper #vue3 .products .product .image,
+.main-wrapper #vue4 .products .product .image,
+.main-wrapper #vue5 .products .product .image,
+.main-wrapper #vue6 .products .product .image {
+    width: 100%;
+    height: 12em;
+    margin-bottom: 0.5em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
+.main-wrapper #vue1 .products .product:hover,
+.main-wrapper #vue2 .products .product:hover,
+.main-wrapper #vue3 .products .product:hover,
+.main-wrapper #vue4 .products .product:hover,
+.main-wrapper #vue5 .products .product:hover,
+.main-wrapper #vue6 .products .product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-wrapper #vue1 .products .product .name,
+.main-wrapper #vue2 .products .product .name,
+.main-wrapper #vue3 .products .product .name,
+.main-wrapper #vue4 .products .product .name,
+.main-wrapper #vue5 .products .product .name,
+.main-wrapper #vue6 .products .product .name {
+    color: #eceef1;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.main-wrapper #vue1 .products .product .price,
+.main-wrapper #vue2 .products .product .price,
+.main-wrapper #vue3 .products .product .price,
+.main-wrapper #vue4 .products .product .price,
+.main-wrapper #vue5 .products .product .price,
+.main-wrapper #vue6 .products .product .price {
+    font-weight: bold;
+    padding: 5px;
+}
+
+@media (max-width: 600px) {
+
+    .main-wrapper #vue1 .cart,
+    .main-wrapper #vue2 .cart,
+    .main-wrapper #vue3 .cart,
+    .main-wrapper #vue4 .cart,
+    .main-wrapper #vue5 .cart,
+    .main-wrapper #vue6 .cart,
+    .main-wrapper #vue1 .cart .cartTable,
+    .main-wrapper #vue2 .cart .cartTable,
+    .main-wrapper #vue3 .cart .cartTable,
+    .main-wrapper #vue4 .cart .cartTable,
+    .main-wrapper #vue5 .cart .cartTable,
+    .main-wrapper #vue6 .cart .cartTable {
+        width: 100%;
+    }
+
+    .main-wrapper #vue1 .products,
+    .main-wrapper #vue2 .products,
+    .main-wrapper #vue3 .products,
+    .main-wrapper #vue4 .products,
+    .main-wrapper #vue5 .products,
+    .main-wrapper #vue6 .products {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main-wrapper #vue1 .products .product,
+    .main-wrapper #vue2 .products .product,
+    .main-wrapper #vue3 .products .product,
+    .main-wrapper #vue4 .products .product,
+    .main-wrapper #vue5 .products .product,
+    .main-wrapper #vue6 .products .product {
+        display: flex;
+        width: 100%;
+    }
+
+    .main-wrapper #vue1 .products .product .image,
+    .main-wrapper #vue2 .products .product .image,
+    .main-wrapper #vue3 .products .product .image,
+    .main-wrapper #vue4 .products .product .image,
+    .main-wrapper #vue5 .products .product .image,
+    .main-wrapper #vue6 .products .product .image {
+        width: calc(100vw - 2.5em);
+        height: calc(100vw - 2.5em);
+    }
+}

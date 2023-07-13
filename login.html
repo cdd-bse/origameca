@@ -1,0 +1,257 @@
+<!-- Codo a Codo - FullStack Python
+1er cuatrimestre 2023 - Comision #23016
+Prof Juan Pablo Nardone
+TP Final
+Grupo 11 - Integrantes
+Nicolas Olguin			
+Kevin Puentes	
+Martin Gelman		
+Fernando Gomez Rojas	
+Fecha de entrega 11/07/2023 -->
+<!DOCTYPE html>
+<html lang="es"></html>
+<html>
+<head><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin:0;
+      padding:0;
+      font-family: sans-serif;
+      background: linear-gradient(rgb(131, 87, 29), rgb(233, 170, 89));
+    }
+    
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: rgba(20, 15, 8, 0.3);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(255, 156, 8, 0.728);
+      border-radius: 10px;
+    }
+    
+    .login-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .login-box .user-box {
+      position: relative;
+    }
+    
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    .login-box .user-box label {
+      position: absolute;
+      top:0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+    
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: rgb(251, 224, 188);
+      font-size: 12px;
+    }
+    
+    .login-box form button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: rgb(249, 27, 11);
+      /* color: rgb(251, 224, 188); */
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: upercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px
+    }
+    
+    .login-box button:hover {
+      background: rgb(251, 224, 188);
+      color: #3e2f14;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgb(251, 224, 188),
+                  0 0 25px rgb(251, 224, 188),
+                  0 0 50px rgb(251, 224, 188),
+                  0 0 100px rgb(251, 224, 188);
+    }
+    
+    .login-box button span {
+      position: absolute;
+      display: block;
+    }
+    
+    .login-box button span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgb(255, 187, 0));
+      animation: btn-anim1 1s linear infinite;
+    }
+
+    .login-box button span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, rgb(255, 187, 0)4);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+  
+    .login-box button span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, rgb(255, 187, 0));
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s
+    }
+  
+    .login-box button span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, rgb(255, 187, 0));
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .75s
+    }
+  
+    p {
+      color: #f1f1f1; 
+      font-size: 14px;
+      text-align: center;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    button{
+      border-radius:5px;
+      border: none; 
+      background: #f1f1f1;
+    }
+
+    .flash-error {
+      color: red;
+    }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const form = document.querySelector('form');
+      const errorDiv = document.getElementById('error-message');
+      const previousPageUrl = document.referrer;
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = form.username.value;
+        const password = form.password.value;
+
+        if (username === 'origameca' && password === '23016') {
+          sessionStorage.setItem('loggedIn', 'true');
+          window.location.href = previousPageUrl;
+        } else {
+          errorDiv.textContent = 'Usuario y/o contraseña inválidos';
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+    <div class="login-box">
+      <h2>Origameca</h2>
+      <form method="POST" action="/login">
+        <div class="user-box">
+          <input type="text" name="username" required>
+          <label>Usuario</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required>
+          <label>Contraseña</label>
+        </div>
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Ingresar
+        </button>
+        <br><br>
+        <p>Usuario:   <span>origameca</span>  |  Contraseña:   <span>23016</span></p>
+        <div id="error-message" style="color: rgb(217, 5, 5); text-align: center;"</div>
+      </form>
+    </div>
+</body>
+</html>
